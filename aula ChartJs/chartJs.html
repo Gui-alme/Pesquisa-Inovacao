@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>ChartJs</title>
+</head>
+
+<body>
+    <div style="display: flex; width: 99%;">
+        <div style="height: 40vh; width: 33%;">
+            <canvas id="myChart" style="height:100%; width:100%;"></canvas>
+        </div>
+
+        <div style="height: 40vh; width: 33%;">
+            <canvas id="myChart2" style="height:100%; width:100%;"></canvas>
+        </div>
+        <div style="height: 40vh; width: 33%;">
+            <canvas id="myChart3" style="height: 100%; width:100%;"></canvas>
+        </div>
+    </div>
+    <br>
+    <h1 style="text-align: center;">Gráficos dos exercícios</h1>
+    <div style="display: flex; width: 99%;">
+        <div style="height: 40vh; width: 33%;">
+            <canvas id="myChart4" style="height: 100%; width:100%;"></canvas>
+        </div>
+        <div style="height: 40vh; width: 33%;">
+            <canvas id="myChart5" style="height: 100%; width:100%;"></canvas>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    const labels = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+    ];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'My First dataset',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [0, 10, 5, 2, 20, 30, 45],
+        }]
+    };
+
+    const labels2 = [
+        '12:00',
+        '13:00',
+        '14:00',
+        '15:00',
+        '16:00',
+        '17:00',
+    ];
+
+    const data2 = {
+        labels: labels2,
+        datasets: [{
+            label: 'Temperatura',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [30, 20.9, 20.7, 20.5, 20.1, 20.2],
+        },
+        {
+            label: 'Umidade',
+            backgroundColor: 'rgb(0, 0, 132)',
+            borderColor: 'rgb(0, 0, 132)',
+            data: [80, 80.2, 80, 80.5, 80.5, 80.3],
+        }
+    ]};
+
+    const data3 = {
+        labels: labels,
+        datasets: [{
+            label: 'Temperatura Média',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [20, 20.4, 20.6, 20.3, 20, 19.8],
+        },
+        {
+            label: 'Umidade Média',
+            backgroundColor: 'rgb(0, 0, 132)',
+            borderColor: 'rgb(0, 0, 132)',
+            data: [90, 90, 90.3, 80.6, 80.8, 80.3],
+        }
+    ]};
+
+    
+
+    const config = {
+        type: 'line',
+        data: data,
+        options: {}
+    };
+
+    const config2 = {
+        type: 'bar',
+        data: data,
+        options: {}
+    };
+    const config3 = {
+        type: 'doughnut',
+        data: data,
+    };
+
+    const config4 = {
+        type: 'line',
+        data: data2,
+    };
+    const config5 = {
+        type: 'bar',
+        data: data3,
+    };
+</script>
+
+<script>
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+
+    const myChart2 = new Chart(
+        document.getElementById('myChart2'),
+        config2
+    );
+
+    const myChart3 = new Chart(
+        document.getElementById('myChart3'),
+        config3
+    );
+
+    const myChart4 = new Chart(
+        document.getElementById('myChart4'),
+        config4
+    );
+    const myChart5 = new Chart(
+        document.getElementById('myChart5'),
+        config5
+    );
+</script>
+
+</html>
